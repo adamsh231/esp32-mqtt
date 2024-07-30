@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Nanda Arya Putra",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -112.74, "left": 131.89, "attrs": {} },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -237.34,
+      "left": 17.99,
+      "attrs": { "chain": "4" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:D18", "matrix1:CLK", "green", [ "h0" ] ],
+    [ "matrix1:CS", "esp:D5", "red", [ "h10.34", "v168.31" ] ],
+    [ "esp:D23", "matrix1:DIN", "yellow", [ "h142.87", "v0.12" ] ],
+    [ "matrix1:GND", "esp:GND.2", "white", [ "h26.53", "v308.22", "h-268.65", "v-8.83" ] ],
+    [ "matrix1:V+", "esp:VIN", "cyan", [ "h39.05", "v331.8", "h-295.79", "v-9.2" ] ]
+  ],
+  "dependencies": {}
+}
